@@ -5,7 +5,7 @@ const progressBarFunction = require("./progress-bar");
 
 const app = {
     init() {
-        console.log('Hola bundle!!');
+
         $('#todo-form').submit(app.addTodo);
     },
     addTodo(event) {
@@ -18,9 +18,11 @@ const app = {
         const $todoCard = $('<div />').addClass('card-panel');
         const $todoCheckbox = $('<input type="checkbox" />').attr('id', todoId);
         const $todoText = $('<label />').attr('for', todoId).text(todo);
+        const $todoBntDelete = $('<button type="button"/>').addClass("btn right").text('x').click(deleteFunction);
 
         $todoCard.append($todoCheckbox);
         $todoCard.append($todoText);
+        $todoCard.append($todoBntDelete);
         $todoContainer.append($todoCard);
 
         $('#todos').append($todoContainer);
@@ -32,4 +34,4 @@ const app = {
 
 $(document).ready(app.init);
 
-deadline.addDeadline();
+
