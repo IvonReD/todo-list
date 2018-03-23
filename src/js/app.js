@@ -2,8 +2,10 @@ const deleteFunction = require("./delete");
 const progressBarFunction = require("./progress-bar");
 
 
+
 const app = {
     init() {
+
         $('#todo-form').submit(app.addTodo);
     },
     addTodo(event) {
@@ -31,4 +33,5 @@ const app = {
 };
 
 $(document).ready(app.init);
+
 
